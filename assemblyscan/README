@@ -1,0 +1,1 @@
+docker run --rm -it dbest/assemblyscan:v1.0 assembly-scan.py

@@ -1,0 +1,33 @@
+v2.0, 13. June 2021
+1) add flags to racon:
+   --no-trimming: turn off trimming
+   --include-unpolished: if contig couldn't be polished output
+   these flags are default.
+2) change alignment format from paf to sam: get CIGAR string and base qualities in addition
+3) add flag --debug: output all intermediary files
+4) add flag --final: output all files from last round
+5) if --debug and --final not set: final polished assembly and racon log file output
+
+v2.1
+1) add --trimming and --include_unpolished as command line options;
+2) add memory usage function;
+3) add output directory
+
+v2.2
+1) add --bam option
+
+v2.3, 10. September 2021
+1) add iterate_fasta function,
+2) more type hinting,
+3) check integer arguments are positive
+4) cleanup while loop over polish rounds in polish function of raconrounds
+5) add test data to directory test_data
+6) add test script raconrounds.sh
+
+
+TODO:
+1) python binding for minimap2: https://github.com/lh3/minimap2/blob/master/python/mappy.pyx
+2) python binding for racon: to be done
+   https://pybind11.readthedocs.io/en/stable/index.html
+
+

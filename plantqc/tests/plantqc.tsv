@@ -1,0 +1,6 @@
+Library Name	Seq Unit Name	Sample Family	Subread Counts	P0	P1	P2	PostFilter Read Count	Reads of Insert Length	P0+P1+P2	P0[%]	P1[%]	P2[%]	Family	Correct Family	sdm_raw_base_count	Raw base count [Gb]
+HSZWT	pbio-2441.23050.ccs.fastq.gz	Myrothamnaceae	1,488,025	353,711,475	427,999,461	19,756,164	4,269,913	20,296	801,467,100	44.13	53.4	2.46	Caricaceae	No	24,602,808,604	24.6
+HSZWT	pbio-2443.23083.ccs.fastq.gz	Myrothamnaceae	1,347,362	354,128,238	425,306,531	22,024,316	4,243,730	19,667	801,459,085	44.19	53.07	2.75	Saxifragaceae	No	22,205,044,158	22.2
+HSZWT	pbio-2443.23084.ccs.fastq.gz	Myrothamnaceae	1,175,789	390,386,610	391,620,869	19,459,621	3,908,524	19,745	801,467,100	48.71	48.86	2.43	Caricaceae	No	19,330,741,551	19.3
+HSZWT	pbio-2443.23085.ccs.fastq.gz	Myrothamnaceae	1,358,646	450,015,762	339,677,786	11,765,537	3,389,177	17,281	801,459,085	56.15	42.38	1.47	Caricaceae	No	22,666,917,441	22.7
+HSZWT	pbio-2443.23086.ccs.fastq.gz	Myrothamnaceae	1,302,477	428,199,828	358,207,706	15,059,567	3,575,004	16,947	801,467,101	53.43	44.69	1.88	Caricaceae	No	21,681,210,823	21.7

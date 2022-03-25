@@ -1,0 +1,142 @@
+usage: plantqc.py [-h] (--file INPUT_FILE | --lib LIBRARY_NAME) [--output OUTPUT] [--verbose] [--grouping] [--transpose] [--excel] [--markdown] [--html] [--pdf] [--seq_unit]
+                  [--ccs {0,1,2}] [--jira JIRA_TICKET] [--user JIRA_USER] [--password JIRA_PASSWORD] [--log {debug,critical,error,warning,info}] --config CONFIG
+
+create table of metrics for pacbio or illumina libraries
+
+optional arguments:
+  -h, --help                                 show this help message and exit
+  --file INPUT_FILE, -f INPUT_FILE           text file with library names, one per line
+  --lib LIBRARY_NAME, -l LIBRARY_NAME        name of library
+  --output OUTPUT, -o OUTPUT                 output filename (default: plantqc.tsv)
+  --verbose, -v                              modify output verbosity (default: False)
+  --grouping, -g                             format numbers (default: True)
+  --transpose, -t                            transpose output file (default: True)
+  --excel, -e                                add excel file output (default: False)
+  --markdown, -m                             add markdown file output (default: True)
+  --html, -w                                 add html file output (default: False)
+  --pdf, -p                                  add pdf file output (default: False)
+  --seq_unit, -u                             file output per seq_unit (default: False)
+  --ccs {0,1,2}, -c {0,1,2}                  for pacbio libraries: only ccs (0), subreads (1), both (3) (default: 0)
+  --jira JIRA_TICKET, -j JIRA_TICKET         name of jira ticket
+  --user JIRA_USER                           jira user name
+  --password JIRA_PASSWORD                   jira user password
+  --log {debug,critical,error,warning,info}  set log level (default: error)
+  --config CONFIG                            Configuration file
+
+
+Example usage:
+
+1) 
+>JIRA=SEQQC-17323
+>LIB=HXXPO
+>docker run --rm -v $PWD:/mnt -w /mnt dbest/plantqc:v7.2 plantqc.py -l $LIB -o $LIB.tsv --config Constants.config --user <your JIRA user id> --password '<your JIRA password>' -j $JIRA
+
+Alternatively, you can run the python script in a conda environment:
+>plantqc.py -l $LIB -o $LIB.tsv --config Constants.config --user <your JIRA user id> --password '<your JIRA password>' -j $JIRA
+
+2) paste plantqc.tsv file into https://rqc.jgi-psf.org/sow_qc/page/HWPSS/2-4835625
+3) copy CLA value from platnqc.tsv file into "Logical Amount (CLA)" data entry box
+4) from pull down menu "Data usable" choose "Usable"
+
+
+Troubleshooting:
+1) ask Bryce
+
+
+Version History:
+
+v1.0:
+first version working for pacbio ccs reads
+
+v2.0:
+add number of bases via web interface
+
+v3.0:
+- use web interface to get pacbio information
+- use web location for sketch file,
+- no need to run on CORI anymore, works from anywhere, laptop etc.
+- new parser for sketch files using pandas
+- use local to format numbers, add --grouping option to turn on this feature
+- write output tsv file using pandas
+
+v4.0:
+- add transpose option
+- add excel output option
+- add illumina plant qc: illumina_metrics
+- rename script to plantqc.py
+- move loop over libraries outside of metrics code to main
+- move code to write to output from metrics code to main
+
+v5.0:
+- add rest calls to get TLA, estimated-genome-size, sow-item-type etc.
+- illumina_metric: estimated-genome-size now taken from database
+- revamp grouping of numbers
+- add markdown output
+- add html output
+- add pdf output
+- streamlining code
+
+v6.0:
+- add ccs option
+- add pacbio_stats_hash
+- remove system option and get sequencing platform from database
+
+v7.0:
+- add interaction with JIRA
+- automatically add comment
+- automatically complete ticket
+- add logger
+
+v7.1:
+- add option to read from config file
+- v1.0:
+first version working for pacbio ccs reads
+
+v2.0:
+add number of bases via web interface
+
+v3.0:
+- use web interface to get pacbio information
+- use web location for sketch file,
+- no need to run on CORI anymore, works from anywhere, laptop etc.
+- new parser for sketch files using pandas
+- use local to format numbers, add --grouping option to turn on this feature
+- write output tsv file using pandas
+
+v4.0:
+- add transpose option
+- add excel output option
+- add illumina plant qc: illumina_metrics
+- rename script to plantqc.py
+- move loop over libraries outside of metrics code to main
+- move code to write to output from metrics code to main
+
+v5.0:
+- add rest calls to get TLA, estimated-genome-size, sow-item-type etc.
+- illumina_metric: estimated-genome-size now taken from database
+- revamp grouping of numbers
+- add markdown output
+- add html output
+- add pdf output
+- streamlining code
+
+v6.0:
+- add ccs option
+- add pacbio_stats_hash
+- remove system option and get sequencing platform from database
+
+v7.0:
+- add interaction with JIRA
+- automatically add comment
+- automatically complete ticket
+- add logger
+
+v7.1:
+- add option to read from config file
+- pass/fail conditions not hardcoded anymore, read from config file
+- update pass/fail conditions
+- add "% reads filtered" to pass/fail conditions
+
+v7.2:
+- config file optional, use defaults of no config file provided
+- make transpose, grouping, markdown creation default

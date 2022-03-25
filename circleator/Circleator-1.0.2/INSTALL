@@ -1,0 +1,44 @@
+
+# Basic installation:
+
+perl Build.PL
+./Build
+./Build test
+sudo ./Build install
+
+# To install into a noncentral location (e.g., one's home directory):
+
+perl Build.PL --install_base=/install/path
+./Build
+./Build test
+./Build install
+
+Note that the tests can take several minutes to run.
+
+# Installing prerequisites, Ubuntu 13.04:
+
+### Use the Ubuntu Software Center or "sudo apt-get install" to install the following packages:
+
+ * perl
+ * bioperl
+ * libbatik-java
+ * vcftools
+
+### Use the CPAN shell to install the remaining required Perl modules:
+
+    sudo cpan
+    install CPAN
+    reload cpan
+    install JSON
+    install Log::Log4perl
+    install SVG
+    install Text::CSV
+
+### Manual test
+
+/install/path/bin/circleator --config=conf/genes-percentGC-GCskew-1.cfg --data=data/NC_011969.gbk >fig1.svg
+/install/path/bin/rasterize-svg fig1.svg png
+
+You may wish to create aliases for these executables if they were not installed into a
+system-wide bin/ directory.
+

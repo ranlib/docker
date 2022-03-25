@@ -1,0 +1,297 @@
+total:
+  len: 9556946
+  maxi: 17
+  mini: 0
+  mean: 5.6580063338225415
+  std: 2.5006534554177993
+  percent_below_threshold: 35.25000559802263
+  percent_above_threshold: 3.7589623295977606
+options: !!python/object:argparse.Namespace
+  bam_file: null
+  sam_file: aln.sam
+  upper: 10
+  lower: 5
+  out_dir: temp
+  threads: 10
+  verbose: true
+contigs:
+  contig_1:
+    len: 961697
+    maxi: 15
+    mini: 0
+    mean: 5.946451949002649
+    std: 2.5307415621307294
+    percent_below_threshold: 29.782769416978528
+    percent_above_threshold: 4.547482211133028
+  contig_10:
+    len: 187931
+    maxi: 14
+    mini: 0
+    mean: 5.352491073851573
+    std: 2.304168188265912
+    percent_below_threshold: 37.82079593042127
+    percent_above_threshold: 2.5860555203771596
+  contig_11:
+    len: 172678
+    maxi: 10
+    mini: 0
+    mean: 4.674486616708556
+    std: 1.9672468034950212
+    percent_below_threshold: 48.97439164224742
+    percent_above_threshold: 0.0
+  contig_12:
+    len: 476713
+    maxi: 15
+    mini: 0
+    mean: 5.302173425100637
+    std: 2.641692313269563
+    percent_below_threshold: 45.61276910845729
+    percent_above_threshold: 4.398453576890079
+  contig_13:
+    len: 35622
+    maxi: 7
+    mini: 0
+    mean: 4.113160406490371
+    std: 1.4875151870619205
+    percent_below_threshold: 54.25579697939476
+    percent_above_threshold: 0.0
+  contig_14:
+    len: 593075
+    maxi: 13
+    mini: 0
+    mean: 5.139557391560932
+    std: 2.3438992152569957
+    percent_below_threshold: 41.99806095350504
+    percent_above_threshold: 1.8392277536567887
+  contig_15:
+    len: 118866
+    maxi: 11
+    mini: 0
+    mean: 5.099877172614541
+    std: 2.128477053999768
+    percent_below_threshold: 37.17126848720408
+    percent_above_threshold: 1.3746571769892146
+  contig_16:
+    len: 107542
+    maxi: 10
+    mini: 0
+    mean: 4.509800822004427
+    std: 2.0672815011019168
+    percent_below_threshold: 51.34831042755388
+    percent_above_threshold: 0.0
+  contig_17:
+    len: 73855
+    maxi: 10
+    mini: 0
+    mean: 5.309146300182791
+    std: 2.0314685375662624
+    percent_below_threshold: 35.794462121725005
+    percent_above_threshold: 0.0
+  contig_18:
+    len: 289382
+    maxi: 15
+    mini: 0
+    mean: 6.196677747752106
+    std: 2.5246044332070947
+    percent_below_threshold: 26.446358101056735
+    percent_above_threshold: 5.9824038813747915
+  contig_19:
+    len: 67119
+    maxi: 5
+    mini: 0
+    mean: 3.132734397115571
+    std: 1.0410921961106119
+    percent_below_threshold: 91.65065033746033
+    percent_above_threshold: 0.0
+  contig_2:
+    len: 50318
+    maxi: 11
+    mini: 0
+    mean: 5.367780913390834
+    std: 2.5404390498369427
+    percent_below_threshold: 45.63575658809969
+    percent_above_threshold: 1.5262927779323503
+  contig_20:
+    len: 222986
+    maxi: 11
+    mini: 0
+    mean: 5.700963289175105
+    std: 1.855010313837847
+    percent_below_threshold: 28.289668409675944
+    percent_above_threshold: 0.16996582745105074
+  contig_21:
+    len: 42830
+    maxi: 7
+    mini: 0
+    mean: 3.162923184683633
+    std: 1.1475452896761797
+    percent_below_threshold: 83.47420032687369
+    percent_above_threshold: 0.0
+  contig_22:
+    len: 35470
+    maxi: 6
+    mini: 0
+    mean: 3.585480687905272
+    std: 1.3937749005769133
+    percent_below_threshold: 77.40625881026219
+    percent_above_threshold: 0.0
+  contig_23:
+    len: 39465
+    maxi: 8
+    mini: 0
+    mean: 3.5914861269479283
+    std: 1.7318235928532295
+    percent_below_threshold: 71.9067528189535
+    percent_above_threshold: 0.0
+  contig_24:
+    len: 37823
+    maxi: 8
+    mini: 0
+    mean: 3.518097453930148
+    std: 1.9120010853567622
+    percent_below_threshold: 74.34100943870132
+    percent_above_threshold: 0.0
+  contig_25:
+    len: 46844
+    maxi: 6
+    mini: 0
+    mean: 3.4048971052856287
+    std: 1.4286709215506996
+    percent_below_threshold: 70.72837503202118
+    percent_above_threshold: 0.0
+  contig_26:
+    len: 26813
+    maxi: 10
+    mini: 0
+    mean: 5.704173348748741
+    std: 2.7213584987197565
+    percent_below_threshold: 32.57002200425167
+    percent_above_threshold: 0.0
+  contig_27:
+    len: 30266
+    maxi: 5
+    mini: 0
+    mean: 2.831031520518073
+    std: 1.0803920201475423
+    percent_below_threshold: 95.97898632128461
+    percent_above_threshold: 0.0
+  contig_28:
+    len: 454854
+    maxi: 13
+    mini: 0
+    mean: 5.210874258553294
+    std: 2.3433217160878472
+    percent_below_threshold: 43.71908348612961
+    percent_above_threshold: 2.1653101874447627
+  contig_29:
+    len: 378007
+    maxi: 15
+    mini: 0
+    mean: 5.002238053792655
+    std: 1.9408936312032097
+    percent_below_threshold: 41.331245188581164
+    percent_above_threshold: 0.06640088675606537
+  contig_3:
+    len: 111017
+    maxi: 8
+    mini: 0
+    mean: 3.6058261347361213
+    std: 1.4642296630751783
+    percent_below_threshold: 67.82294603529189
+    percent_above_threshold: 0.0
+  contig_30:
+    len: 435121
+    maxi: 12
+    mini: 0
+    mean: 5.980639867990742
+    std: 2.0842679826994286
+    percent_below_threshold: 26.95457125719053
+    percent_above_threshold: 1.078550564095964
+  contig_31:
+    len: 343809
+    maxi: 11
+    mini: 0
+    mean: 5.37461497517517
+    std: 2.2437747757127724
+    percent_below_threshold: 40.75082385859591
+    percent_above_threshold: 0.4694466986030034
+  contig_32:
+    len: 779510
+    maxi: 15
+    mini: 0
+    mean: 6.0596554245615835
+    std: 2.6368709401098887
+    percent_below_threshold: 30.368949724827136
+    percent_above_threshold: 6.344755038421573
+  contig_33:
+    len: 1770565
+    maxi: 17
+    mini: 0
+    mean: 6.629805175184193
+    std: 2.5458964682204117
+    percent_below_threshold: 20.443191862484575
+    percent_above_threshold: 7.2629358425135475
+  contig_34:
+    len: 210126
+    maxi: 13
+    mini: 0
+    mean: 5.529863034560217
+    std: 2.3476529958358094
+    percent_below_threshold: 35.73094238694878
+    percent_above_threshold: 3.0262794704129905
+  contig_35:
+    len: 371339
+    maxi: 11
+    mini: 0
+    mean: 5.249909112697562
+    std: 2.1835545977060997
+    percent_below_threshold: 38.35605740307374
+    percent_above_threshold: 0.3236934445345089
+  contig_4:
+    len: 156551
+    maxi: 13
+    mini: 0
+    mean: 6.003858167625886
+    std: 2.5655794549684243
+    percent_below_threshold: 28.4629290135483
+    percent_above_threshold: 7.128028565770899
+  contig_5:
+    len: 190116
+    maxi: 12
+    mini: 0
+    mean: 5.30060594584359
+    std: 2.5583641194560074
+    percent_below_threshold: 43.04003871320668
+    percent_above_threshold: 2.522670369669044
+  contig_6:
+    len: 244668
+    maxi: 10
+    mini: 0
+    mean: 4.519238314777576
+    std: 1.9805407724874136
+    percent_below_threshold: 53.274232837968185
+    percent_above_threshold: 0.0
+  contig_7:
+    len: 208109
+    maxi: 14
+    mini: 0
+    mean: 7.138768626056538
+    std: 2.8591355465824173
+    percent_below_threshold: 21.451739232805885
+    percent_above_threshold: 14.519794915164649
+  contig_8:
+    len: 186815
+    maxi: 13
+    mini: 0
+    mean: 5.865797714316302
+    std: 2.625100229785646
+    percent_below_threshold: 33.73176672108771
+    percent_above_threshold: 4.847041190482563
+  contig_9:
+    len: 99044
+    maxi: 12
+    mini: 0
+    mean: 5.40846492467994
+    std: 2.055603872263594
+    percent_below_threshold: 32.30180525826905
+    percent_above_threshold: 1.4458220588829207
