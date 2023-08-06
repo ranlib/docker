@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 RUN apt-get update
 RUN apt-get -y upgrade
@@ -9,11 +9,11 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /usr/src
 
-RUN wget --quiet https://github.com/samtools/samtools/releases/download/1.17/samtools-1.17.tar.bz2 && \
-	tar jxf samtools-1.17.tar.bz2 && \
-	rm samtools-1.17.tar.bz2 && \
-	cd samtools-1.17 && \
+RUN wget --quiet https://github.com/samtools/samtools/releases/download/1.18/samtools-1.18.tar.bz2 && \
+	tar jxf samtools-1.18.tar.bz2 && \
+	rm samtools-1.18.tar.bz2 && \
+	cd samtools-1.18 && \
 	./configure --prefix $(pwd) && \
 	make
 
-ENV PATH=${PATH}:/usr/src/samtools-1.17
+ENV PATH=${PATH}:/usr/src/samtools-1.18
