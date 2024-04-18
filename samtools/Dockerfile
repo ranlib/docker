@@ -9,11 +9,11 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /usr/src
 
-RUN wget --quiet https://github.com/samtools/samtools/releases/download/1.19.2/samtools-1.19.2.tar.bz2 && \
-	tar jxf samtools-1.19.2.tar.bz2 && \
-	rm samtools-1.19.2.tar.bz2 && \
-	cd samtools-1.19.2 && \
+RUN wget --quiet https://github.com/samtools/samtools/releases/download/1.20/samtools-1.20.tar.bz2 && \
+	tar jxf samtools-1.20.tar.bz2 && \
+	rm samtools-1.20.tar.bz2 && \
+	cd samtools-1.20 && \
 	./configure --prefix $(pwd) && \
 	make
 
-ENV PATH=${PATH}:/usr/src/samtools-1.19.2
+ENV PATH=${PATH}:/usr/src/samtools-1.20
