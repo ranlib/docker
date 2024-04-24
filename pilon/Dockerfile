@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 ENV PILON_VERSION=1.24
 RUN apt-get update
 RUN apt-get install -y default-jre wget
