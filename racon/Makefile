@@ -1,3 +1,4 @@
+VER=1.5.0
 raconrounds:
 	docker build -t dbest/raconrounds:latest -f racon.dockerfile .
 
@@ -6,7 +7,7 @@ raconrounds_publish:
 	docker push dbest/raconrounds:v2.2
 
 racon:
-	docker build -t dbest/racon:v1.4.21 .
+	docker build -t dbest/racon:$(VER) .
 
 clean:
 	rm *~
