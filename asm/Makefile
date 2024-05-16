@@ -1,5 +1,5 @@
 IMAGE_NAME = asm
-VERSION = 0.1.13
+VERSION = v0.1.13
 
 TAG = dbest/$(IMAGE_NAME):$(VERSION)
 
