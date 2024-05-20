@@ -1,4 +1,4 @@
-VERSION = 0.1.28
+VERSION = 2.28
 TAG = dbest/minimap2:$(VERSION)
 
 build:
@@ -6,7 +6,6 @@ build:
 
 build_no_cache:
 	docker build --no-cache -t $(TAG) .
-
 
 push:
 	docker push $(TAG)
