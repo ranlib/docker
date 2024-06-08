@@ -1,19 +1,29 @@
 FROM ubuntu:24.04
 
+ARG DEBIAN_FRONTEND=noninteractive
+ARG SAMTOOLS_VERSION=1.20
+ARG BCFTOOLS_VERSION=1.20
+
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get install -y build-essential wget libncurses5-dev zlib1g-dev libbz2-dev liblzma-dev libcurl3-dev
-RUN apt-get clean
-RUN apt-get purge
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get install -y build-essential wget zlib1g-dev libbz2-dev liblzma-dev libcurl3-dev
 
 WORKDIR /usr/src
 
-RUN wget --quiet https://github.com/samtools/samtools/releases/download/1.20/samtools-1.20.tar.bz2 && \
-	tar jxf samtools-1.20.tar.bz2 && \
-	rm samtools-1.20.tar.bz2 && \
-	cd samtools-1.20 && \
-	./configure --prefix $(pwd) && \
+RUN wget --quiet https://github.com/samtools/samtools/releases/download/${SAMTOOLS_VERSION}/samtools-${SAMTOOLS_VERSION}.tar.bz2 && \
+	tar jxf samtools-${SAMTOOLS_VERSION}.tar.bz2 && \
+	rm samtools-${SAMTOOLS_VERSION}.tar.bz2 && \
+	cd samtools-${SAMTOOLS_VERSION} && \
+	./configure --without-curses --prefix $(pwd) && \
 	make
+	
+RUN wget --quiet https://github.com/samtools/bcftools/releases/download/${BCFTOOLS_VERSION}/bcftools-${BCFTOOLS_VERSION}.tar.bz2 && \
+    tar xjf bcftools-${BCFTOOLS_VERSION}.tar.bz2 && \
+    rm -rf bcftools-${BCFTOOLS_VERSION}.tar.bz2 && \
+    cd bcftools-${BCFTOOLS_VERSION} && \
+    ./configure --without-curses --prefix $(pwd) && \
+    make
 
-ENV PATH=${PATH}:/usr/src/samtools-1.20
+RUN apt-get clean && apt-get purge && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+ENV PATH=${PATH}:/usr/src/samtools-${SAMTOOLS_VERSION}:/usr/src/bcftools-${BCFTOOLS_VERSION}
