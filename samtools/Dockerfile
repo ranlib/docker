@@ -3,6 +3,7 @@ FROM ubuntu:24.04
 ARG DEBIAN_FRONTEND=noninteractive
 ARG SAMTOOLS_VERSION=1.20
 ARG BCFTOOLS_VERSION=1.20
+ARG HTSLIB_VERSION=1.20
 
 RUN apt-get update
 RUN apt-get -y upgrade
@@ -24,6 +25,13 @@ RUN wget --quiet https://github.com/samtools/bcftools/releases/download/${BCFTOO
     ./configure --without-curses --prefix $(pwd) && \
     make
 
+RUN wget --quiet https://github.com/samtools/htslib/releases/download/${HTSLIB_VERSION}/htslib-${HTSLIB_VERSION}.tar.bz2 && \
+    tar xjf htslib-${HTSLIB_VERSION}.tar.bz2 && \
+    rm -rf htslib-${HTSLIB_VERSION}.tar.bz2 && \
+    cd htslib-${HTSLIB_VERSION} && \
+    ./configure --without-curses --prefix $(pwd) && \
+    make
+
 RUN apt-get clean && apt-get purge && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV PATH=${PATH}:/usr/src/samtools-${SAMTOOLS_VERSION}:/usr/src/bcftools-${BCFTOOLS_VERSION}
+ENV PATH=${PATH}:/usr/src/samtools-${SAMTOOLS_VERSION}:/usr/src/bcftools-${BCFTOOLS_VERSION}:/usr/src/htslib-${HTSLIB_VERSION}
