@@ -1,9 +1,13 @@
-all:
-	docker build -t dbest/centrifuge:latest .
+VER=v1.0.4.1
 
-publish:
-	docker tag dbest/centrifuge:latest dbest/centrifuge:v1.0.4
-	docker push dbest/centrifuge:v1.0.4
+build:
+	docker build -t dbest/centrifuge:$(VER) .
+
+build_no_cache:
+	docker build --no-cache -t dbest/centrifuge:$(VER) .
+
+push:
+	docker push dbest/centrifuge:$(VER)
 
 clean:
 	rm *~
