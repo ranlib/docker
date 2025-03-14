@@ -1,5 +1,5 @@
-FROM ubuntu:latest@sha256:9d6a8699fb5c9c39cf08a0871bd6219f0400981c570894cd8cbea30d3424a31f 
-ARG FLYE_VER="2.9.3"
+FROM ubuntu:24.04
+ARG FLYE_VER="2.9.5"
 
 RUN apt-get update && apt-get install -y make \
  gcc \
@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -y make \
  python3 \
  python3-pip \
  python-is-python3 \	
- python-setuptools \
  zlib1g-dev \
  wget && \
  rm -rf /var/lib/apt/lists/* && apt-get clean && apt-get autoclean

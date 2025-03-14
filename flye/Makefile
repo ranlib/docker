@@ -1,4 +1,4 @@
-VER=v2.9.3
+VER=v2.9.5
 
 build:
 	docker build -t dbest/flye:${VER} .
