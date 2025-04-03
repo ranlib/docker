@@ -1,4 +1,4 @@
-VER=v0.23.4
+VER=v0.24.0
 
 build:
 	docker build -t dbest/fastp:$(VER) -f Dockerfile .
