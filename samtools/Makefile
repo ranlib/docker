@@ -1,4 +1,4 @@
-VER=v1.21
+VER=v1.22.1
 
 build:
 	docker build -t dbest/samtools:$(VER) . 
