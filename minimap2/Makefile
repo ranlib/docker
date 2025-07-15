@@ -1,4 +1,4 @@
-VERSION = 2.28
+VERSION = 2.30
 TAG = dbest/minimap2:$(VERSION)
 
 build:
