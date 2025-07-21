@@ -1,5 +1,5 @@
-VERSION = 2.0.0
-TAG = dbest/freyja:$(VERSION)
+VERSION=v2.0.0
+TAG=dbest/freyja:$(VERSION)
 
 build:
 	docker build -t $(TAG) .
