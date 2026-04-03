@@ -1,22 +1,32 @@
-FROM ubuntu:25.04
-ARG FREYJA_VERSION=2.0.0
-ARG SAMTOOLS_VERSION=1.22.1
-ARG HTSLIB_VERSION=1.22.1
+FROM ubuntu:22.04
+ARG FREYJA_VERSION=2.0.3
+ARG SAMTOOLS_VERSION=1.23.1
+ARG HTSLIB_VERSION=1.23.1
 ARG IVAR_VERSION=1.4.4
 ARG USHER_VER=0.6.3
 
-RUN apt-get update && apt-get install -y --no-install-recommends wget make gcc g++ ca-certificates \
-    python3 python-is-python3 python3-pip python3-venv \
-    zlib1g-dev libbz2-dev liblzma-dev libcurl3-dev \
-    bzip2 \
-    autoconf automake \
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get update && \
+    apt-get install -y \
+        python3.11 \
+        python3.10-venv \
+        python3.11-distutils \
+        python3-pip && \
+    apt-get install -y --no-install-recommends wget make gcc g++ ca-certificates zlib1g-dev libbz2-dev liblzma-dev libcurl3-dev bzip2 autoconf automake \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+RUN python --version
 
 WORKDIR /opt/src
 
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
-RUN pip3 install PyYAML setuptools click pandas requests cvxpy matplotlib tqdm seaborn plotly pyarrow
+RUN pip3 install PyYAML setuptools click pandas requests cvxpy matplotlib tqdm seaborn plotly pyarrow sphinx
 
 RUN wget -q https://github.com/andersen-lab/Freyja/archive/refs/tags/v${FREYJA_VERSION}.tar.gz && \
     tar -xvf v${FREYJA_VERSION}.tar.gz && \

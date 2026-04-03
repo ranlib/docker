@@ -1,4 +1,4 @@
-VER=v5.2f
+VER=v5.4a
 
 build:
 	docker build -t dbest/snpeff:$(VER) . 
